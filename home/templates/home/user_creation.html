@@ -1,0 +1,20 @@
+{% comment %} {% extends 'home/base.html' %}
+
+{% block title %}<title>User Create</title>{% endblock title %}
+
+{% load static %}
+
+{% block my_content %}
+
+<form action={% url 'user_creation' %} method='POST'>
+    {% csrf_token %}
+    <p>
+    <input type="text" name='name' placeholder='name'>
+    </p>
+    <p>
+    <input type="text" name='last_name' placeholder='last_name'>
+    </p>
+    <button>Sumbit</button>
+</form>
+
+{% endblock my_content %} {% endcomment %}

@@ -1,5 +1,3 @@
-from unicodedata import name
-from django.http import HttpResponse
 from django.shortcuts import render
 from datetime import datetime
 from home.models import User
@@ -14,7 +12,7 @@ def view_users(request):
     return render(request, 'home/view_users.html', {'users' : users})
 
 def index_bootstrap(request):
-    return render(request, 'home/index.html')
+    return render(request, 'home/index.html') 
 
 def about_us(request):
     return render(request,'home/about.html')
