@@ -3,10 +3,21 @@
     {% block base_style %}
         
         <h1>Users Data Base</h1>
-        {% for user in users %}
-            <p><b>Name:</b> {{user.name}} <b>Last Name:</b> {{user.last_name}} <b>Member Since:</b> {{user.registration_date}}</p>
-        {% endfor %}
 
+        <form action={% url 'view_users' %} method="GET">        
+            {{form}}
+            <input type="submit" value="Search User">
+        </form>
+
+        <p>    
+            {% if users %}
+                {% for user in users %}
+                    <p><b>Name:</b> {{user.name}} <b>Last Name:</b> {{user.last_name}} <b>Member Since:</b> {{user.registration_date}}</p>
+                {% endfor %}
+            {% else %}
+                <p>No such user created yet</p>
+            {% endif %}
+        </p>
     {% endblock base_style %}
 
 
