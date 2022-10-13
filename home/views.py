@@ -20,7 +20,7 @@ def view_users(request):
     return render(request, 'home/view_users.html', {'users' : users})
 
 def index_bootstrap(request):
-    return render(request, 'home/index.html')
+    return render(request, 'home/index.html') 
 
 def about_us(request):
     return render(request,'home/about.html')
