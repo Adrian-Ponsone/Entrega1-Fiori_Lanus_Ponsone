@@ -1,0 +1,14 @@
+    {% extends 'home/base.html' %}
+
+    {% block base_style %}
+        
+        <h1>Users Data Base</h1>
+        {% for user in users %}
+            <p><b>Name:</b> {{user.name}} <b>Last Name:</b> {{user.last_name}} <b>Member Since:</b> {{user.registration_date}}</p>
+        {% endfor %}
+
+    {% endblock base_style %}
+
+
+
+    

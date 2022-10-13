@@ -1,0 +1,14 @@
+{% extends 'home/base.html' %}
+
+{% block base_style %}
+    <form action={% url 'user_creation' %} method="POST">
+        {% csrf_token %}
+        <p> 
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="last_name" placeholder="Last Name">
+        </p>
+        <input type="submit" value="Create">
+
+
+    </form>
+{% endblock base_style %}
