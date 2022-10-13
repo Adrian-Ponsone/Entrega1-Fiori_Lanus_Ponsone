@@ -15,7 +15,8 @@ def user_creation(request):
             data = form.cleaned_data
             name = data['name']
             last_name = data['last_name']
-            registration_date = data.get('registrarion_date', datetime.now())
+            registration_date =  data.get('registrarion_date', datetime.now())
+            
             user = User(name = name, last_name = last_name, registration_date = registration_date)
             user.save()
             return redirect('view_users')

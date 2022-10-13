@@ -1,5 +1,5 @@
     {% extends 'home/base.html' %}
-
+    {% block title %}<title>User DB</title>{% endblock title %}
     {% block base_style %}
         
         <h1>Users Data Base</h1>
@@ -10,7 +10,7 @@
         </form>
 
         <p>    
-            {% if users %}
+            {% if user %}
                 {% for user in users %}
                     <p><b>Name:</b> {{user.name}} <b>Last Name:</b> {{user.last_name}} <b>Member Since:</b> {{user.registration_date}}</p>
                 {% endfor %}
