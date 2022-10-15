@@ -9,14 +9,14 @@
             <input type="submit" value="Search User">
         </form>
 
-        <p>    
-            {% if user %}
-                {% for user in users %}
-                    <p><b>Name:</b> {{user.name}} <b>Last Name:</b> {{user.last_name}} <b>Member Since:</b> {{user.registration_date}}</p>
-                {% endfor %}
-            {% else %}
-                <p>No such user created yet</p>
-            {% endif %}
+        <p>
+                    {% if users %}
+                        {% for user in users %}
+                            <p><b>Name:</b> {{user.name}} <b>Last Name:</b> {{user.last_name}} <b>Member Since:</b> {{user.registration_date}}</p>
+                        {% endfor %}
+                    {% else %}
+                        <p>No users created</p>
+                    {% endif %}
         </p>
     {% endblock base_style %}
 

@@ -6,7 +6,6 @@ from home.models import User
 from home.forms import UserForm, SearchUserForm
 
 def user_creation(request):
-    
     if request.method == 'POST':
         
         form =UserForm(request.POST)
@@ -15,7 +14,9 @@ def user_creation(request):
             data = form.cleaned_data
             name = data['name']
             last_name = data['last_name']
-            registration_date =  data.get('registration_date', datetime.now())
+            registration_date =  data.get('registration_date')
+            if registration_date == None:
+                registration_date = datetime.now()
             
             user = User(name = name, last_name = last_name, registration_date = registration_date)
             user.save()
